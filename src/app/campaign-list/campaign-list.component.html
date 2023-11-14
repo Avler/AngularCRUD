@@ -4,7 +4,10 @@
   <button class="btn btn-success mb-2" (click)="navigateToCreate()">
     Create New Campaign
   </button>
-
+  <h3>Your Account Founds</h3>
+  <div *ngFor="let item of found">
+    <p>{{ item.amount }} $</p>
+  </div>
   <table class="table table-hover">
     <thead>
       <tr>

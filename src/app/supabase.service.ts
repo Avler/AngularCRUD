@@ -30,8 +30,34 @@ export class SupabaseService {
     return data;
   }
 
+  async updateFounds(campaignData: any) {
+    // Retrieve the current amount
+    const { data: currentData, error: retrieveError } = await this.supabase
+      .from("found")
+      .select("amount")
+      .eq("id", 1)
+      .single();
+
+    if (retrieveError) {
+      return { data: null, error: retrieveError };
+    }
+
+    const newAmount = currentData.amount - campaignData.fund;
+
+    const { data, error } = await this.supabase
+      .from("found")
+      .update({ amount: newAmount })
+      .eq("id", 1);
+
+    return { data, error };
+  }
+
   async getCampaigns() {
     const { data, error } = await this.supabase.from("campaign").select("*");
+    return { data, error };
+  }
+  async getFounds() {
+    const { data, error } = await this.supabase.from("found").select("*");
     return { data, error };
   }
 

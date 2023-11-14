@@ -52,6 +52,7 @@ export class CampaignCreateComponent {
       const result = await this.supabaseService.addCampaign(
         this.campaignForm.value
       );
+      await this.supabaseService.updateFounds(this.campaignForm.value);
       if (result) {
         console.log("Campaign added successfully", result);
       }
