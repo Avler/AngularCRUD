@@ -1,7 +1,11 @@
 .main-container {
   color: #fff;
   text-align: center;
-  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   h1 {
     color: #fff;
     font-size: 2em;

@@ -3,17 +3,17 @@
   margin: 100px 20px;
   padding: 20px;
   background: #f8f9fa;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); // Stronger shadow for more depth
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   h2 {
-    color: #2c3e50; // Darker shade for title
+    color: #2c3e50;
     text-align: center;
     margin-bottom: 30px;
-    font-size: 26px; // Slightly larger for emphasis
+    font-size: 26px;
   }
   .btn-cont {
     display: flex;
@@ -47,7 +47,7 @@
     }
 
     &.btn-danger {
-      background-color: #dc3545; // Red color for delete button
+      background-color: #dc3545;
       &:hover {
         background-color: darken(#dc3545, 10%);
       }
@@ -69,11 +69,7 @@
     }
 
     th {
-      background: linear-gradient(
-        135deg,
-        #6dd5ed,
-        #2193b0
-      ); // Gradient for a modern header look
+      background: linear-gradient(135deg, #6dd5ed, #2193b0);
       color: white;
       font-size: 16px;
     }
@@ -82,7 +78,7 @@
       transition: background-color 0.3s;
 
       &:hover {
-        background-color: #f4f4f4; // Lighter hover effect for rows
+        background-color: #f4f4f4;
       }
     }
   }
@@ -100,29 +96,28 @@
   }
 
   .table tbody td {
-    flex: 1 1 50%; /* Each td takes up 50% of the flex container */
+    flex: 1 1 50%;
     display: flex;
-    justify-content: space-between; /* This will space out your label and content */
+    justify-content: space-between;
     padding: 10px;
-    box-sizing: border-box; /* Makes sure padding is included in the width */
+    box-sizing: border-box;
   }
 
   .table tbody td:before {
     content: attr(data-label);
     font-weight: bold;
-    margin-right: 10px; /* Adjust space between label and data */
+    margin-right: 10px;
   }
 
-  /* Ensure buttons fit in the layout */
   .btn {
-    flex-grow: 0; /* Prevents buttons from taking more space */
-    margin: 5px 0; /* Provides a little space between buttons */
+    flex-grow: 0;
+    margin: 5px 0;
   }
 }
 
 @media (max-width: 590px) {
   .table thead {
-    display: none; /* Hide table headers in mobile view */
+    display: none;
   }
 
   .table tbody tr {
@@ -140,7 +135,7 @@
   }
 
   .table tbody td:before {
-    content: attr(data-label); /* Use data-label attribute to display header */
+    content: attr(data-label);
     flex-basis: 50%;
     font-weight: bold;
   }

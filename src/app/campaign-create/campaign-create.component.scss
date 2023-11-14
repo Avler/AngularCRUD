@@ -6,7 +6,10 @@
   background: #f8f9fa;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   h2 {
     color: #333;
     text-align: center;
@@ -15,7 +18,11 @@
 
   .form-group {
     margin-bottom: 20px;
-
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     label {
       display: block;
       margin-bottom: 8px;
@@ -26,7 +33,7 @@
     input[type="text"],
     input[type="number"],
     select {
-      width: 280px;
+      width: 100%;
       padding: 12px 10px;
       border: 1px solid #ccc;
       border-radius: 4px;
@@ -39,7 +46,7 @@
       }
     }
     select {
-      width: 100%;
+      width: 270px;
     }
   }
 

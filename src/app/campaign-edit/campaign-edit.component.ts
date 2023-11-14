@@ -55,10 +55,10 @@ export class CampaignEditComponent {
     if (data) {
       this.campaignForm.patchValue({
         name: data.campaign_name,
-        keywords: data.keywords, // Assuming keywords are stored as an array
+        keywords: data.keywords,
         bidAmount: data.bid_amount,
         fund: data.campaign_fund,
-        status: data.status ? "on" : "off", // Convert boolean to string if necessary
+        status: data.status ? "on" : "off",
         town: data.town,
         radius: data.radius,
       });
@@ -67,7 +67,6 @@ export class CampaignEditComponent {
 
   async onSubmit() {
     if (this.campaignForm.valid) {
-      // Convert form status back to boolean if necessary
       const formValue = {
         ...this.campaignForm.value,
         status: this.campaignForm.value.status === "on",

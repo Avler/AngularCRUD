@@ -17,9 +17,9 @@
       <input
         type="text"
         class="form-control"
-        id="keywords"
         formControlName="keywords"
         required
+        [typeahead]="keywordsSuggestions"
       />
     </div>
 
@@ -31,7 +31,7 @@
         id="bidAmount"
         formControlName="bidAmount"
         required
-        min="0.01"
+        min="1"
       />
     </div>
 
@@ -43,27 +43,22 @@
         id="fund"
         formControlName="fund"
         required
-        min="0.01"
+        min="1"
       />
-    </div>
-
-    <div class="form-group">
-      <label for="status">Status</label>
-      <select class="form-control" id="status" formControlName="status">
-        <option value="on">On</option>
-        <option value="off">Off</option>
-      </select>
     </div>
 
     <div class="form-group">
       <label for="town">Town</label>
-      <input
-        type="text"
-        class="form-control"
+      <select
+        class="form-control town"
         id="town"
         formControlName="town"
         required
-      />
+      >
+        <option *ngFor="let town of townsSuggestions" [value]="town">
+          {{ town }}
+        </option>
+      </select>
     </div>
 
     <div class="form-group">
@@ -77,7 +72,13 @@
         min="1"
       />
     </div>
-
+    <div class="form-group">
+      <label for="status">Status</label>
+      <select class="form-control" id="status" formControlName="status">
+        <option value="on" class="test">On</option>
+        <option value="off">Off</option>
+      </select>
+    </div>
     <div class="form-group action-buttons">
       <button
         type="submit"

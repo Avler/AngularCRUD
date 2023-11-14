@@ -8,7 +8,7 @@ import { SupabaseService } from "../supabase.service";
   styleUrls: ["./campaign-list.component.scss"],
 })
 export class CampaignListComponent implements OnInit {
-  campaigns: any[] = []; // This should match the type of your campaign objects
+  campaigns: any[] = [];
 
   constructor(
     private supabaseService: SupabaseService,
@@ -30,12 +30,11 @@ export class CampaignListComponent implements OnInit {
   }
 
   navigateToCreate() {
-    this.router.navigate(["/campaign/create"]); // Adjust the route as necessary for your app
+    this.router.navigate(["/campaign/create"]);
   }
 
   async editCampaign(campaign: any) {
-    // Navigate to the CampaignCreateComponent with the campaign id as a parameter
-    this.router.navigate(["/campaign/edit", campaign.id]); // Make sure you have the route set up for this
+    this.router.navigate(["/campaign/edit", campaign.id]);
   }
 
   async deleteCampaign(campaign: any) {

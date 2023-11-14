@@ -9,6 +9,15 @@ import { SupabaseService } from "../supabase.service";
   styleUrls: ["./campaign-create.component.scss"],
 })
 export class CampaignCreateComponent {
+  keywordsSuggestions: string[] = ["Green Forest ", "Nature ", "Save Animals"];
+  townsSuggestions: string[] = [
+    "Kraków",
+    "Warszawa",
+    "Wieliczka",
+    "Lublin",
+    "Zamość",
+  ];
+
   campaignForm!: FormGroup;
 
   constructor(
@@ -16,11 +25,13 @@ export class CampaignCreateComponent {
     private router: Router,
     private supabaseService: SupabaseService
   ) {
-    this.createForm();
+    {
+      this.createForm();
+    }
   }
 
   navigateToList() {
-    this.router.navigate(["/campaign/list"]); // Adjust the route as necessary for your app
+    this.router.navigate(["/campaign/list"]);
   }
 
   createForm() {

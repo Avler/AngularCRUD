@@ -4,13 +4,15 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { provideRouter } from "@angular/router";
 import { routes } from "./app-routing.module";
 import { SupabaseService } from "./supabase.service";
+import { TypeaheadModule } from "ngx-bootstrap/typeahead";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { CampaignCreateComponent } from "./campaign-create/campaign-create.component";
 import { CampaignListComponent } from "./campaign-list/campaign-list.component";
 import { CampaignEditComponent } from "./campaign-edit/campaign-edit.component";
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from "./home/home.component";
 
 @NgModule({
   declarations: [
@@ -20,7 +22,13 @@ import { HomeComponent } from './home/home.component';
     CampaignEditComponent,
     HomeComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    TypeaheadModule.forRoot(),
+    BrowserAnimationsModule,
+  ],
   providers: [provideRouter(routes), SupabaseService],
   bootstrap: [AppComponent],
 })
