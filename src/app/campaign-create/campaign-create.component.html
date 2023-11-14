@@ -1,0 +1,98 @@
+<div class="container">
+  <h2>Create Campaign</h2>
+  <form [formGroup]="campaignForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Campaign Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        formControlName="name"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="keywords">Keywords</label>
+      <input
+        type="text"
+        class="form-control"
+        id="keywords"
+        formControlName="keywords"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="bidAmount">Bid Amount</label>
+      <input
+        type="number"
+        class="form-control"
+        id="bidAmount"
+        formControlName="bidAmount"
+        required
+        min="0.01"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="fund">Campaign Fund</label>
+      <input
+        type="number"
+        class="form-control"
+        id="fund"
+        formControlName="fund"
+        required
+        min="0.01"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="status">Status</label>
+      <select class="form-control" id="status" formControlName="status">
+        <option value="on">On</option>
+        <option value="off">Off</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="town">Town</label>
+      <input
+        type="text"
+        class="form-control"
+        id="town"
+        formControlName="town"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="radius">Radius (km)</label>
+      <input
+        type="number"
+        class="form-control"
+        id="radius"
+        formControlName="radius"
+        required
+        min="1"
+      />
+    </div>
+
+    <div class="form-group action-buttons">
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="!campaignForm.valid"
+      >
+        Create Campaign
+      </button>
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="navigateToList()"
+      >
+        View Campaign List
+      </button>
+    </div>
+  </form>
+</div>

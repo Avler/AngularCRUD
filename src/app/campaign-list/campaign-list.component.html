@@ -1,0 +1,47 @@
+<!-- campaign-list.component.html -->
+<div class="container mt-3">
+  <h2>Campaign List</h2>
+  <button class="btn btn-success mb-2" (click)="navigateToCreate()">
+    Create New Campaign
+  </button>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Campaign Name</th>
+        <th>Keywords</th>
+        <th>Bid Amount</th>
+        <th>Fund</th>
+        <th>Status</th>
+        <th>Town</th>
+        <th>Radius (km)</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let campaign of campaigns">
+        <td data-label="Campaign Name">{{ campaign.campaign_name }}</td>
+        <td data-label="Keywords">{{ campaign.keywords }}</td>
+        <td data-label="Bid Amount">{{ campaign.bid_amount }}</td>
+        <td data-label="Campaign Fund">{{ campaign.campaign_fund }}</td>
+        <td data-label="Status">{{ campaign.status ? "On" : "Off" }}</td>
+        <td data-label="Town">{{ campaign.town }}</td>
+        <td data-label="Radius">{{ campaign.radius }}</td>
+        <td class="btn-cont">
+          <button
+            class="btn btn-primary btn-sm"
+            (click)="editCampaign(campaign)"
+          >
+            Edit
+          </button>
+          <button
+            class="btn btn-danger btn-sm"
+            (click)="deleteCampaign(campaign)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
